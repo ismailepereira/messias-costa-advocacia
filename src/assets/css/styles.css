@@ -220,7 +220,10 @@ img { display: block; max-width: 100%; }
      que é a seção que fecha cliente — para longe demais. Aqui ele encolhe
      para caber praticamente numa tela. */
   .hero { min-height: 0; padding: calc(var(--nav-h) + 1.2rem) 0 2rem; }
-  .hero-cutout img { max-width: 10.5rem; max-height: 27vh; }
+  /* Retrato: tem que dar pra reconhecer o rosto. Antes estava em 10.5rem
+     (~168px) e ficava irreconhecível — economizava altura à custa da única
+     imagem do site. Em tablet/notebook pequeno ele cresce bem mais. */
+  .hero-cutout img { max-width: 17rem; max-height: 38vh; }
   .hero-eyebrow { margin-bottom: 0.9rem; font-size: 0.62rem; letter-spacing: 0.2em; }
   /* teto de 2rem: acima disso "Direito Previdenciário" quebra em duas
      linhas a 375px e o hero cresce ~90px, empurrando a triagem */
@@ -230,6 +233,18 @@ img { display: block; max-width: 100%; }
   .hero-cta { margin-top: 1.5rem; gap: 0.7rem; }
   .hero-cta .btn { flex: 1 1 12rem; }
   .scroll-cue { display: none; }        /* a triagem já está logo abaixo */
+}
+
+/* Tablet e notebook pequeno (641–900px): o layout empilha, mas há largura
+   e altura de sobra — não faz sentido usar o retrato de tamanho de celular. */
+@media (min-width: 641px) and (max-width: 900px) {
+  .hero-cutout img { max-width: 22rem; max-height: 46vh; }
+  .hero-title { font-size: clamp(2rem, 4.6vw, 2.8rem); }
+}
+
+/* Celular pequeno: garante que o retrato não coma a tela inteira */
+@media (max-width: 400px) {
+  .hero-cutout img { max-width: 14rem; max-height: 32vh; }
 }
 .hero-title { font-size: clamp(2.5rem, 6.4vw, 4.6rem); font-weight: 500; letter-spacing: -0.008em; }
 /* cada linha vira uma janela de máscara — o JS desliza o <i> de dentro */
