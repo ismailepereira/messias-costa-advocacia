@@ -1,0 +1,13 @@
+# ========== MODO PRÉVIA — TROCAR NO LANÇAMENTO ==========
+# Enquanto o número da OAB e a biografia estiverem pendentes, o site não
+# deve ser indexado. No lançamento, substitua todo este arquivo por:
+#
+#   User-agent: *
+#   Allow: /
+#
+#   Sitemap: https://SEU-DOMINIO-AQUI/sitemap.xml
+#
+# E remova a meta robots noindex do <head> do index.html.
+
+User-agent: *
+Disallow: /

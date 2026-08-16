@@ -1,0 +1,45 @@
+# Dependências / build
+node_modules/
+dist/
+.cache/
+
+# Ambiente
+.env
+.env.*
+!.env.example
+*.local
+
+# Chaves e certificados
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+*.jks
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+
+# Credenciais de nuvem / service accounts
+serviceAccount*.json
+service-account*.json
+*credentials*.json
+gha-creds-*.json
+
+# Arquivos com "secret"/"senha" no nome
+*secret*
+*senha*
+!*.example
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Editores
+.vscode/
+.idea/
