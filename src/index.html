@@ -10,8 +10,7 @@
 
   <!-- ========== MODO PRÉVIA — REMOVER NO LANÇAMENTO ==========
        Impede o Google de indexar enquanto o número da OAB e a biografia
-       estiverem pendentes. Ao publicar de verdade: apague esta linha E
-       libere o robots.txt. -->
+       estiverem pendentes. Ao publicar: apague esta linha E libere o robots.txt. -->
   <meta name="robots" content="noindex, nofollow" />
 
   <meta property="og:type" content="website" />
@@ -20,19 +19,20 @@
   <meta property="og:image" content="assets/img/og-image.jpg" />
   <meta property="og:locale" content="pt_BR" />
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230e0f11'/%3E%3Ctext x='32' y='42' font-size='24' text-anchor='middle' fill='%23e9e7e1' font-family='monospace'%3EMC%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a1420'/%3E%3Ctext x='32' y='43' font-size='27' text-anchor='middle' fill='%23c9a227' font-family='Georgia,serif'%3EMC%3C/text%3E%3C/svg%3E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <!-- Sem Tailwind CDN: estava carregado com ZERO utilitário em uso.
        ?v= força o navegador a pegar a versão nova a cada atualização. -->
-  <link rel="stylesheet" href="assets/css/styles.css?v=3" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=4" />
 </head>
 <body>
 
   <div class="progress" id="progress" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
 
   <!-- ===== Nav ===== -->
   <nav class="site-nav" id="site-nav">
@@ -42,181 +42,170 @@
         <span class="sub">Advocacia</span>
       </a>
       <div class="nav-links">
-        <a href="#areas" class="nav-link">Áreas</a>
-        <a href="#atendimento-passos" class="nav-link">Atendimento</a>
+        <a href="#areas" class="nav-link">Áreas de atuação</a>
         <a href="#sobre" class="nav-link">Sobre</a>
-        <a href="#contato" class="nav-link">Contato</a>
-        <a href="https://wa.me/5591993415370" target="_blank" rel="noopener" class="btn btn-solid"><span>Falar agora</span></a>
+        <a href="#atendimento" class="nav-link">Atendimento</a>
+        <a href="https://wa.me/5591993415370" target="_blank" rel="noopener" class="btn btn-gold"><span>Falar agora</span></a>
       </div>
       <button id="nav-toggle" class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
       </button>
     </div>
     <div id="nav-mobile">
       <a href="#areas">Áreas de atuação</a>
-      <a href="#atendimento-passos">Como funciona</a>
       <a href="#sobre">Sobre</a>
+      <a href="#atendimento">Atendimento</a>
       <a href="#contato">Contato</a>
     </div>
   </nav>
 
-  <!-- ===== Hero — abertura em forma de cabeçalho de documento ===== -->
+  <!-- ===== Hero ===== -->
   <header id="topo" class="hero">
-    <div class="hero-bg" aria-hidden="true">
+    <div class="hero-layers" aria-hidden="true">
       <div class="base"></div>
-      <div class="ledger" data-parallax="0.12"></div>
-    </div>
-    <!-- Retrato/foto real entra aqui quando o cliente enviar:
-         <div class="hero-photo" aria-hidden="true"><img src="assets/img/hero.jpg" alt="" /></div> -->
-
-    <div class="wrap">
-      <!-- OBRIGATÓRIO (Provimento 205/2021 CFOAB): inscrição na OAB.
-           Preencher antes de publicar. -->
-      <div class="doc-head meta" data-intro>
-        <span>OAB/PA n° [pendente]</span>
-        <span>Anapú — Pará · Brasil</span>
-      </div>
-      <div class="rule-line hero-rule" data-rule aria-hidden="true"></div>
-
-      <h1 data-split-lines>
-        <span>Messias Costa</span>
-      </h1>
-      <p class="hero-role meta meta--bright" data-intro>Advogado e Consultor Jurídico</p>
-
-      <div class="rule-line hero-rule" data-rule aria-hidden="true"></div>
-
-      <div class="hero-areas meta" data-intro>
-        <span>Previdenciário</span>
-        <span>Criminal</span>
-        <span>Cível</span>
-        <span>Família</span>
-      </div>
-
-      <p class="hero-lead" data-intro>
-        Aposentadorias e benefícios do <strong>INSS</strong>, <strong>salário-maternidade</strong>
-        — inclusive para trabalhadoras rurais — e <strong>defesa criminal</strong>.
-        Atendimento presencial em Anapú e remoto para clientes de todo o Brasil.
-      </p>
-
-      <div class="hero-cta" data-intro>
-        <a href="https://wa.me/5591993415370" target="_blank" rel="noopener" class="btn btn-solid"><span>Falar no WhatsApp</span></a>
-        <a href="#areas" class="btn btn-line"><span>Ver áreas de atuação</span></a>
-      </div>
+      <div class="lines" data-parallax="0.16"></div>
+      <div class="glow" data-parallax="0.3"></div>
+      <div class="vignette"></div>
     </div>
 
-    <div class="scroll-cue meta" id="scroll-cue" aria-hidden="true">
+    <!-- FOTO DE FUNDO DO HERO — automática.
+         Basta salvar a foto real como src/assets/img/hero.jpg que ela aparece.
+         Se o arquivo não existir, esta camada se remove sozinha e o fundo
+         abstrato assume. Precisa ser foto real: imagem gerada por IA induz
+         a erro e é vedada (art. 3º, II). -->
+    <div class="hero-photo" aria-hidden="true">
+      <img src="assets/img/hero.jpg" alt="" onerror="this.closest('.hero-photo').remove()" />
+    </div>
+
+    <div class="wrap hero-grid">
+      <div class="hero-inner">
+        <!-- OBRIGATÓRIO (art. 5º, §2º): número de inscrição na OAB. -->
+        <p class="eyebrow hero-eyebrow" data-intro>OAB/PA n° [pendente] · Advogado e Consultor Jurídico</p>
+
+        <h1 class="hero-title" data-split-lines>
+          <span>Assessoria jurídica em</span>
+          <span class="it">Direito Previdenciário</span>
+          <span>e Defesa Criminal</span>
+        </h1>
+
+        <div class="divider" data-rule aria-hidden="true"></div>
+
+        <p class="hero-lead" data-intro>
+          Aposentadorias e benefícios do <strong>INSS</strong>, <strong>salário-maternidade</strong>
+          — inclusive para trabalhadoras rurais — e <strong>defesa criminal</strong>.
+          Atendimento presencial em Anapú e remoto para clientes de todo o Brasil.
+        </p>
+
+        <div class="hero-cta" data-intro>
+          <a href="https://wa.me/5591993415370" target="_blank" rel="noopener" class="btn btn-gold"><span>Falar no WhatsApp</span></a>
+          <a href="#areas" class="btn btn-outline"><span>Áreas de atuação</span></a>
+        </div>
+      </div>
+
+      <!-- RETRATO RECORTADO — o tema de abertura do site.
+           Salve o PNG com fundo transparente em: src/assets/img/messias-recorte.png
+           Precisa ser foto real dele (art. 3º, II veda o que induz a erro).
+           Sem o arquivo, o hero volta sozinho pra coluna única centralizada. -->
+      <div class="hero-cutout" data-intro>
+        <img src="assets/img/messias-recorte.png" alt="Messias Costa, advogado"
+             onerror="document.querySelector('.hero').classList.add('hero--solo'); this.closest('.hero-cutout').remove();" />
+      </div>
+    </div>
+
+    <div class="scroll-cue" id="scroll-cue" aria-hidden="true">
       <span class="track"></span>
       <span>Role</span>
     </div>
   </header>
 
-  <!-- ===== Ficha — dados verificáveis, sem número inventado ===== -->
-  <section class="ficha">
+  <!-- ===== Faixa de dados =====
+       Só fato verificável. Nada de "15 anos de experiência" ou "500 casos"
+       sem o cliente confirmar — número inventado induz a erro (art. 3º, II). -->
+  <section class="stats">
     <div class="wrap">
-      <dl data-stagger>
-        <div class="row reveal">
-          <dt class="meta">Inscrição</dt>
-          <dd>OAB/PA n° [pendente de confirmação]</dd>
+      <div class="stat-grid" data-stagger>
+        <div class="stat reveal">
+          <span class="val">IV</span>
+          <span class="lbl">Áreas de atuação</span>
         </div>
-        <div class="row reveal">
-          <dt class="meta">Base</dt>
-          <dd>Anapú — Pará</dd>
+        <div class="stat reveal">
+          <span class="val">Anapú</span>
+          <span class="lbl">Pará — atendimento presencial</span>
         </div>
-        <div class="row reveal">
-          <dt class="meta">Alcance</dt>
-          <dd>Atendimento remoto para todo o Brasil</dd>
+        <div class="stat reveal">
+          <span class="val">Brasil</span>
+          <span class="lbl">Atendimento remoto</span>
         </div>
-        <div class="row reveal">
-          <dt class="meta">Áreas</dt>
-          <dd>Previdenciário · Criminal · Cível · Família</dd>
-        </div>
-        <div class="row reveal">
-          <dt class="meta">Contato</dt>
-          <dd>(91) 99341-5370 · messiascosta.adv@gmail.com</dd>
-        </div>
-      </dl>
+      </div>
     </div>
   </section>
 
-  <!-- ===== Áreas de atuação — índice, não grade de cards ===== -->
-  <section id="areas" class="section areas">
-    <div class="wrap">
-      <div class="running-head meta">
-        <span>§ 01 — Áreas de atuação</span>
-        <span>04 itens</span>
-      </div>
-
-      <h2 class="section-title" data-split style="font-size:clamp(2rem,4.5vw,3rem); margin-bottom:1rem;">
-        O que este escritório faz
-      </h2>
-      <p class="reveal" style="max-width:42rem;">
+  <!-- ===== Áreas de atuação ===== -->
+  <section id="areas" class="section">
+    <div class="wrap center">
+      <p class="eyebrow reveal">O que fazemos</p>
+      <h2 class="section-title" data-split>Áreas de <span class="it">atuação</span></h2>
+      <div class="divider" data-rule aria-hidden="true"></div>
+      <p class="section-intro reveal">
         Atuação concentrada nas áreas abaixo, com acompanhamento direto do caso em cada etapa.
       </p>
-
-      <div class="docket" data-stagger style="margin-top:2.5rem;">
-        <article class="docket-item reveal">
-          <span class="meta">§ 01.1</span>
-          <div>
-            <h3>Aposentadorias e benefícios do INSS</h3>
-            <p>Orientação e acompanhamento em pedidos, revisões e recursos de aposentadoria e demais benefícios previdenciários.</p>
-          </div>
+    </div>
+    <div class="wrap">
+      <div class="area-grid" data-stagger>
+        <article class="area reveal">
+          <span class="roman">I.</span>
+          <h3>Aposentadorias e benefícios do INSS</h3>
+          <p>Orientação e acompanhamento em pedidos, revisões e recursos de aposentadoria e demais benefícios previdenciários.</p>
         </article>
-        <article class="docket-item reveal">
-          <span class="meta">§ 01.2</span>
-          <div>
-            <h3>Salário-maternidade</h3>
-            <p>Acompanhamento de pedidos e recursos junto ao INSS, inclusive para trabalhadoras rurais.</p>
-          </div>
+        <article class="area reveal">
+          <span class="roman">II.</span>
+          <h3>Salário-maternidade</h3>
+          <p>Acompanhamento de pedidos e recursos junto ao INSS, inclusive para trabalhadoras rurais.</p>
         </article>
-        <article class="docket-item reveal">
-          <span class="meta">§ 01.3</span>
-          <div>
-            <h3>Defesa criminal</h3>
-            <p>Acompanhamento e defesa em processos criminais, do inquérito policial ao julgamento, incluindo Tribunal do Júri.</p>
-          </div>
+        <article class="area reveal">
+          <span class="roman">III.</span>
+          <h3>Defesa criminal</h3>
+          <p>Acompanhamento e defesa em processos criminais, do inquérito policial ao julgamento, incluindo Tribunal do Júri.</p>
         </article>
-        <article class="docket-item reveal">
-          <span class="meta">§ 01.4</span>
-          <div>
-            <h3>Cível e família</h3>
-            <p>Atuação em questões cíveis e de direito de família, com orientação sobre alternativas e prazos de cada caso.</p>
-          </div>
+        <article class="area reveal">
+          <span class="roman">IV.</span>
+          <h3>Cível e família</h3>
+          <p>Atuação em questões cíveis e de direito de família, com orientação sobre alternativas e prazos de cada caso.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ===== Declaração ===== -->
-  <section class="statement">
+  <!-- ===== Citação ===== -->
+  <section class="band">
+    <div class="band-bg" data-parallax="0.2" aria-hidden="true">
+      <div class="fill"></div>
+    </div>
     <div class="wrap">
-      <p data-split>Orientação clara sobre o seu caso, do primeiro contato à decisão final.</p>
-      <p class="attrib meta reveal">Messias Costa · Advogado</p>
+      <blockquote data-split>Orientação clara sobre o seu caso, do primeiro contato à decisão final.</blockquote>
+      <p class="attrib reveal">Messias Costa · Advogado</p>
     </div>
   </section>
 
   <!-- ===== Como funciona ===== -->
-  <section id="atendimento-passos" class="section">
+  <section class="section">
     <div class="wrap">
-      <div class="running-head meta">
-        <span>§ 02 — Como funciona</span>
-        <span>03 etapas</span>
-      </div>
-
-      <h2 data-split style="font-size:clamp(2rem,4.5vw,3rem);">Do primeiro contato ao acompanhamento</h2>
-
-      <div class="steps" data-stagger>
+      <p class="eyebrow reveal">Passo a passo</p>
+      <h2 class="section-title" data-split>Como funciona o <span class="it">atendimento</span></h2>
+      <div class="steps-rule" data-rule aria-hidden="true"></div>
+      <div class="step-grid" data-stagger>
         <div class="step reveal">
-          <span class="tag meta">Etapa 01</span>
+          <div class="n">I</div>
           <h3>Contato inicial</h3>
           <p>Você entra em contato pelo WhatsApp e descreve a sua situação.</p>
         </div>
         <div class="step reveal">
-          <span class="tag meta">Etapa 02</span>
+          <div class="n">II</div>
           <h3>Análise do caso</h3>
           <p>Avaliação dos documentos e da situação, com orientação sobre os caminhos possíveis.</p>
         </div>
         <div class="step reveal">
-          <span class="tag meta">Etapa 03</span>
+          <div class="n">III</div>
           <h3>Acompanhamento</h3>
           <p>Condução do processo com retorno sobre cada etapa, presencialmente ou à distância.</p>
         </div>
@@ -226,67 +215,60 @@
 
   <!-- ===== Sobre ===== -->
   <section id="sobre" class="section sobre">
-    <div class="wrap">
-      <div class="running-head meta">
-        <span>§ 03 — Sobre</span>
-        <span>Messias Costa</span>
-      </div>
-
-      <div class="sobre-grid">
-        <div class="sobre-photo">
-          <div class="frame" data-wipe>
-            <!-- placeholder até o cliente enviar retrato profissional -->
-            <div class="placeholder"><span>Retrato · a incluir</span></div>
-            <!-- <img src="assets/img/sobre.jpg" alt="Messias Costa, advogado" /> -->
+    <div class="wrap sobre-grid">
+      <div class="sobre-photo">
+        <div class="frame" data-wipe>
+          <!-- RETRATO — automático. Salve a foto real como
+               src/assets/img/sobre.jpg e ela substitui o placeholder sozinha. -->
+          <img src="assets/img/sobre.jpg" alt="Messias Costa, advogado"
+               onload="this.nextElementSibling.remove()"
+               onerror="this.remove()" />
+          <div class="placeholder">
+            <span class="mono">MC</span>
+            <small>Retrato a incluir</small>
           </div>
-          <p class="caption meta">Fig. 01 — Anapú, Pará</p>
         </div>
-        <div class="sobre-text">
-          <h2 data-split style="font-size:clamp(2rem,4.5vw,2.8rem);">Messias Costa</h2>
-          <p class="lead reveal">
-            Advogado e consultor jurídico, com atuação em Direito Previdenciário, Defesa Criminal, Cível e Família.
-          </p>
-          <!-- PENDENTE: biografia real (formação, ano de inscrição na OAB, trajetória) -->
-          <p class="reveal">[Biografia pendente — formação, tempo de atuação e trajetória profissional. Preencher com o cliente antes de publicar.]</p>
-          <ul class="sobre-list" data-stagger>
-            <li class="reveal">Escritório em Anapú, no Pará</li>
-            <li class="reveal">Atendimento remoto para clientes de outros estados</li>
-            <li class="reveal">Atuação também como palestrante</li>
-          </ul>
-        </div>
+      </div>
+      <div class="sobre-text">
+        <p class="eyebrow reveal">Sobre</p>
+        <h2 class="section-title" data-split>Messias <span class="it">Costa</span></h2>
+        <div class="divider" data-rule aria-hidden="true"></div>
+        <p class="lead reveal">
+          Advogado e consultor jurídico, com atuação em Direito Previdenciário, Defesa Criminal, Cível e Família.
+        </p>
+        <!-- PENDENTE: biografia real (formação, ano de inscrição na OAB, trajetória) -->
+        <p class="reveal">[Biografia pendente — formação, tempo de atuação e trajetória profissional. Preencher com o cliente antes de publicar.]</p>
+        <ul class="sobre-list" data-stagger>
+          <li class="reveal">Escritório em Anapú, no Pará</li>
+          <li class="reveal">Atendimento remoto para clientes de outros estados</li>
+          <li class="reveal">Atuação também como palestrante</li>
+        </ul>
       </div>
     </div>
   </section>
 
   <!-- ===== Atendimento ===== -->
   <section id="atendimento" class="section">
-    <div class="wrap">
-      <div class="running-head meta">
-        <span>§ 04 — Atendimento</span>
-        <span>Anapú — PA</span>
+    <div class="wrap loc-grid">
+      <div class="loc-info">
+        <p class="eyebrow reveal">Onde atendemos</p>
+        <h2 class="section-title" data-split>Atendimento</h2>
+        <div class="divider" data-rule aria-hidden="true"></div>
+        <p class="big reveal">Anapú — Pará</p>
+        <p class="reveal">Goiás, N° 10, São Luís, Anapú — PA</p>
+        <!-- PENDENTE: confirmar horário -->
+        <p class="reveal">Horário: [confirmar]</p>
+        <p class="reveal" style="margin-bottom:1.8rem;">
+          Atendimento remoto disponível para clientes de todo o Brasil, especialmente em casos previdenciários e consultoria.
+        </p>
+        <a class="btn btn-outline reveal" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Goi%C3%A1s%2C%20N%C2%BA%2010%2C%20S%C3%A3o%20Lu%C3%ADs%2C%20Anap%C3%BA%2C%20PA">
+          <span>Abrir no Google Maps</span>
+        </a>
       </div>
-
-      <div class="loc-grid">
-        <div>
-          <h2 data-split style="font-size:clamp(2rem,4.5vw,2.8rem);">Onde e como atendemos</h2>
-          <div class="loc-list">
-            <div class="row reveal"><span class="meta">Endereço</span><span>Goiás, N° 10, São Luís, Anapú — PA</span></div>
-            <div class="row reveal"><span class="meta">Presencial</span><span>Anapú e região</span></div>
-            <div class="row reveal"><span class="meta">Remoto</span><span>Todo o Brasil</span></div>
-            <!-- PENDENTE: confirmar horário -->
-            <div class="row reveal"><span class="meta">Horário</span><span>[confirmar]</span></div>
-          </div>
-          <div style="margin-top:2rem;">
-            <a class="btn btn-line reveal" target="_blank" rel="noopener"
-               href="https://www.google.com/maps/search/?api=1&query=Goi%C3%A1s%2C%20N%C2%BA%2010%2C%20S%C3%A3o%20Lu%C3%ADs%2C%20Anap%C3%BA%2C%20PA">
-              <span>Abrir no Google Maps</span>
-            </a>
-          </div>
-        </div>
-        <div class="map-frame reveal">
-          <iframe title="Mapa — Anapú, PA" src="https://www.google.com/maps?q=Anap%C3%BA,+PA&z=12&output=embed"
-            width="100%" height="100%" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+      <div class="map-frame reveal">
+        <iframe title="Mapa — Anapú, PA" src="https://www.google.com/maps?q=Anap%C3%BA,+PA&z=12&output=embed"
+          width="100%" height="100%" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </section>
@@ -299,24 +281,24 @@
         <p style="max-width:22rem; margin-top:1rem;">
           Direito Previdenciário, Defesa Criminal, Cível e Família. Anapú, Pará.
         </p>
-        <!-- OBRIGATÓRIO: inscrição na OAB. NÃO PUBLICAR sem preencher. -->
+        <!-- OBRIGATÓRIO (art. 5º, §2º). NÃO PUBLICAR sem preencher. -->
         <p class="foot-oab">OAB/PA n° [pendente de confirmação]</p>
       </div>
       <div>
-        <p class="foot-h meta">Contato</p>
+        <p class="foot-h">Contato</p>
         <p><a href="tel:+5591993415370">(91) 99341-5370</a></p>
         <p><a href="https://wa.me/5591993415370" target="_blank" rel="noopener">WhatsApp</a></p>
         <p><a href="mailto:messiascosta.adv@gmail.com">messiascosta.adv@gmail.com</a></p>
         <p><a href="https://www.instagram.com/advogadomessiascosta/" target="_blank" rel="noopener">@advogadomessiascosta</a></p>
       </div>
       <div>
-        <p class="foot-h meta">Atendimento</p>
+        <p class="foot-h">Atendimento</p>
         <p>Anapú — PA (presencial)</p>
         <p>Remoto — todo o Brasil</p>
         <p>Horário: [confirmar]</p>
       </div>
     </div>
-    <div class="wrap foot-bottom meta">
+    <div class="wrap foot-bottom">
       <span>© <span id="ano"></span> Messias Costa Advocacia</span>
       <span>Anapú · Pará</span>
     </div>
@@ -325,14 +307,13 @@
   <!-- ===== WhatsApp flutuante ===== -->
   <a class="wa-float" href="https://wa.me/5591993415370" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    <span class="label">WhatsApp</span>
   </a>
 
   <!-- ===== Scripts ===== -->
   <script type="importmap">
     { "imports": { "motion": "https://cdn.jsdelivr.net/npm/motion@11/+esm" } }
   </script>
-  <script type="module" src="assets/js/main.js?v=3"></script>
+  <script type="module" src="assets/js/main.js?v=4"></script>
 
   <!-- rede de segurança: se o Motion não carregar (CDN fora/offline), mostra tudo estático -->
   <script>
