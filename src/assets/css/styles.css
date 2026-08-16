@@ -268,6 +268,44 @@ img { display: block; max-width: 100%; }
 }
 .stat .lbl { display: block; margin-top: 0.9rem; font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.22em; color: var(--ink-dim); }
 
+/* ===== Triagem — "qual é a sua situação?" =====
+   O visitante precisa se reconhecer antes de entender o serviço. Cada cartão
+   fala na linguagem dele e abre o WhatsApp com a mensagem já escrita, o que
+   reduce o atrito de quem tem pouca familiaridade com celular. */
+.triagem { background: var(--bg); border-bottom: 1px solid var(--rule-soft); }
+.triagem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1rem; margin-top: 2.6rem; }
+.caso {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 1.5rem 1.6rem; background: var(--panel);
+  border: 1px solid var(--rule-soft); border-left: 3px solid var(--gold-dk);
+  min-height: 5.4rem;                       /* alvo de toque generoso */
+  transition: border-color 0.35s var(--ease), background 0.35s var(--ease), transform 0.35s var(--ease);
+}
+.caso:hover { background: #17222f; border-left-color: var(--gold); transform: translateX(3px); }
+.caso .txt { font-size: 1.04rem; color: var(--ink); line-height: 1.45; }
+.caso .seta { color: var(--gold); flex-shrink: 0; font-size: 1.3rem; line-height: 1; }
+.triagem .nota { margin-top: 1.6rem; font-size: 0.88rem; color: var(--ink-faint); }
+
+/* ===== Perguntas frequentes =====
+   É o que a pessoa digita no Google, então é também o melhor SEO possível —
+   e é informação, não oferta de serviço (permitido pelo Provimento 205). */
+.faq { max-width: 46rem; margin-top: 2.6rem; border-top: 1px solid var(--rule-soft); }
+.faq details { border-bottom: 1px solid var(--rule-soft); }
+.faq summary {
+  cursor: pointer; list-style: none; padding: 1.35rem 2.5rem 1.35rem 0; position: relative;
+  font-size: 1.06rem; color: var(--ink); font-family: var(--serif); font-weight: 500;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+"; position: absolute; right: 0.4rem; top: 1.2rem;
+  color: var(--gold); font-size: 1.4rem; line-height: 1; transition: transform 0.3s var(--ease);
+}
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.faq .resposta { padding: 0 0 1.4rem; color: var(--ink-dim); font-size: 0.97rem; }
+.faq .resposta p { margin: 0 0 0.8rem; }
+.faq .resposta p:last-child { margin: 0; }
+
 /* ===== Áreas de atuação (numerais romanos) ===== */
 .area-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1px; margin-top: 4rem; background: var(--rule-soft); border: 1px solid var(--rule-soft); }
 .area { position: relative; background: var(--bg); padding: 2.8rem 2.1rem 3rem; overflow: hidden; transition: background 0.5s var(--ease); }
