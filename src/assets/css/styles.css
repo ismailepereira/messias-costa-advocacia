@@ -250,7 +250,9 @@ img { display: block; max-width: 100%; }
   .hero .divider { margin: 1.1rem 0; }
   .hero-lead { font-size: 0.98rem; }
   .hero-cta { margin-top: 1.6rem; }
-  .hero-cutout img { max-height: min(58vh, 26rem); }
+  /* o texto ocupa ~440px; sobra altura na linha, então o retrato pode
+     crescer sem empurrar o hero para fora da dobra */
+  .hero-cutout img { max-height: min(70vh, 34rem); }
 }
 .hero-lead { font-size: clamp(0.98rem, 1.7vw, 1.1rem); color: var(--ink-dim); max-width: 40rem; margin: 0 auto; }
 .hero-lead strong { color: var(--ink); font-weight: 600; }
