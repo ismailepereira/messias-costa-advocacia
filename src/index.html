@@ -31,6 +31,37 @@
 </head>
 <body>
 
+  <!-- ==================== MODO PRÉVIA — REMOVER NO LANÇAMENTO ====================
+       Este aviso existe porque o retrato do hero ainda é PROVISÓRIO (não é foto
+       do Messias). Como o site está numa URL pública, sem este aviso qualquer
+       visitante acreditaria que aquele rosto é o dele — o que o art. 3º, II do
+       Provimento 205/2021 trata como informação que induz a erro.
+
+       Ao publicar de verdade, remova este bloco inteiro (o <div> e o <style>),
+       junto com a meta robots=noindex e o Disallow do robots.txt. -->
+  <div class="previa-aviso">
+    <strong>Prévia para aprovação.</strong>
+    A foto usada aqui é ilustrativa e <strong>não é o Dr. Messias</strong> — serve só para
+    mostrar o layout. Faltam ainda a foto real, o número da OAB e a biografia.
+  </div>
+  <style>
+    .previa-aviso {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: #2a1608; color: #f3d9a8; border-bottom: 1px solid var(--gold);
+      font-size: 0.76rem; line-height: 1.45; text-align: center;
+      padding: 0.55rem 1rem; font-weight: 400;
+    }
+    .previa-aviso strong { color: #ffe6b0; font-weight: 600; }
+    :root { --aviso-h: 2.6rem; }
+    .site-nav { top: var(--aviso-h); }
+    .hero { padding-top: calc(var(--nav-h) + var(--aviso-h) + 2rem); }
+    @media (max-width: 640px) {
+      :root { --aviso-h: 4.2rem; }
+      .previa-aviso { font-size: 0.7rem; padding: 0.5rem 0.8rem; }
+    }
+  </style>
+  <!-- ================== FIM DO BLOCO DE PRÉVIA ================== -->
+
   <div class="progress" id="progress" aria-hidden="true"></div>
   <div class="grain" aria-hidden="true"></div>
 

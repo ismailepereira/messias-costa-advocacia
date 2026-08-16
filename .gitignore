@@ -1,10 +1,3 @@
-# ===== RETRATO PROVISÓRIO =====
-# Não é foto real do Messias — está aqui só para avaliar a composição do hero.
-# Fica fora do Git para que NUNCA vá ao ar por acidente (art. 3º, II).
-# Quando a foto real chegar: gere o recorte e APAGUE estas 3 linhas.
-src/assets/img/messias-recorte.webp
-src/assets/img/RETRATO-PROVISORIO.txt
-
 # Dependências / build
 node_modules/
 dist/
