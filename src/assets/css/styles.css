@@ -192,7 +192,13 @@ img { display: block; max-width: 100%; }
 .hero-eyebrow { margin-bottom: 2rem; }
 
 /* ===== Retrato recortado ===== */
-.hero-cutout { position: relative; display: flex; justify-content: center; align-items: flex-end; }
+.hero-cutout { position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+/* legenda da imagem ilustrativa — fica colada na foto, não numa tarja que
+   pode ser cortada num print. O JS a remove quando a foto real entra. */
+.foto-legenda {
+  margin: 0.6rem 0 0; font-size: 0.62rem; text-transform: uppercase;
+  letter-spacing: 0.22em; color: var(--ink-faint); text-align: center;
+}
 /* halo dourado atrás dele — dá o foco sem precisar de fundo na foto */
 .hero-cutout::before {
   content: ""; position: absolute; left: 50%; top: 46%; transform: translate(-50%, -50%);

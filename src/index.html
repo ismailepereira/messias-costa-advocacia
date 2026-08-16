@@ -27,7 +27,7 @@
 
   <!-- Sem Tailwind CDN: estava carregado com ZERO utilitário em uso.
        ?v= força o navegador a pegar a versão nova a cada atualização. -->
-  <link rel="stylesheet" href="assets/css/styles.css?v=6" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=7" />
 </head>
 <body>
 
@@ -135,11 +135,21 @@
            Precisa ser foto real dele (art. 3º, II veda o que induz a erro).
            Sem o arquivo, o hero volta sozinho pra coluna única centralizada. -->
       <div class="hero-cutout" data-intro>
-        <!-- Enquanto não houver a foto real, mostra o marcador "sua foto aqui".
-             Assim que o recorte real existir, ele assume automaticamente. -->
-        <img src="assets/img/messias-recorte.webp" alt="Espaço reservado para a fotografia do advogado"
-             data-fallback="assets/img/placeholder-retrato.svg"
-             onerror="if(this.dataset.fallback){this.src=this.dataset.fallback;this.removeAttribute('data-fallback');}else{document.querySelector('.hero').classList.add('hero--solo');this.closest('.hero-cutout').remove();}" />
+        <!-- Ordem de preferência:
+             1. messias-recorte.webp  — a foto REAL dele, quando chegar
+             2. ilustrativa-retrato.webp — imagem ilustrativa, só na fase de prévia
+             3. placeholder-retrato.svg — marcador "sua foto aqui"
+             A legenda abaixo é removida automaticamente quando a foto real entra. -->
+        <img src="assets/img/messias-recorte.webp" alt="Imagem ilustrativa do layout"
+             data-etapa="1"
+             onload="if(this.dataset.etapa==='1'){const l=this.parentElement.querySelector('.foto-legenda'); if(l) l.remove(); this.alt='Messias Costa, advogado';}"
+             onerror="const e=this.dataset.etapa;
+                      if(e==='1'){ this.dataset.etapa='2'; this.src='assets/img/ilustrativa-retrato.webp'; }
+                      else if(e==='2'){ this.dataset.etapa='3'; this.src='assets/img/placeholder-retrato.svg'; this.alt='Espaço reservado para a fotografia do advogado'; const l=this.parentElement.querySelector('.foto-legenda'); if(l) l.remove(); }
+                      else { document.querySelector('.hero').classList.add('hero--solo'); this.closest('.hero-cutout').remove(); }" />
+        <!-- Legenda presa à imagem: uma tarja no topo da página pode ser cortada
+             num print, esta não. Some sozinha quando a foto real do cliente entra. -->
+        <p class="foto-legenda">Imagem meramente ilustrativa</p>
       </div>
     </div>
 
@@ -462,7 +472,7 @@
   <script type="importmap">
     { "imports": { "motion": "https://cdn.jsdelivr.net/npm/motion@11/+esm" } }
   </script>
-  <script type="module" src="assets/js/main.js?v=6"></script>
+  <script type="module" src="assets/js/main.js?v=7"></script>
 
   <!-- rede de segurança: se o Motion não carregar (CDN fora/offline), mostra tudo estático -->
   <script>
