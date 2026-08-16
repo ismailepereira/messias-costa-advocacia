@@ -196,6 +196,19 @@ def checar_peso(pasta: Path) -> None:
         ok(f"Imagens somam {total:.0f} KB.")
 
 
+def checar_retrato_provisorio(src: Path, lancamento: bool) -> None:
+    """Trava contra o acidente mais caro: publicar com retrato provisório
+    (imagem de banco ou gerada por IA) no lugar da foto real do cliente."""
+    marcadores = list(src.rglob("RETRATO-PROVISORIO*")) + list(src.rglob("FOTO-PROVISORIA*"))
+    if marcadores:
+        (erro if lancamento else aviso)(
+            "Retrato PROVISÓRIO em uso — não é foto real do cliente. Art. 3º, II. "
+            f"Substitua e apague {marcadores[0].name}."
+        )
+    else:
+        ok("Nenhum marcador de retrato provisório.")
+
+
 def checar_contato(html: str) -> None:
     if not re.search(r"wa\.me/\d{12,13}", html):
         aviso("Não encontrei link de WhatsApp no formato wa.me/55DDDNUMERO.")
@@ -245,6 +258,7 @@ def main() -> int:
     checar_tailwind(html)
     checar_acessibilidade(html, css)
     checar_peso(src)
+    checar_retrato_provisorio(src, lancamento)
     checar_contato(html)
 
     for m in OKS:
