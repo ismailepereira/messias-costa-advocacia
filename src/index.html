@@ -107,8 +107,10 @@
            Precisa ser foto real dele (art. 3º, II veda o que induz a erro).
            Sem o arquivo, o hero volta sozinho pra coluna única centralizada. -->
       <div class="hero-cutout" data-intro>
-        <img src="assets/img/messias-recorte.png" alt="Messias Costa, advogado"
-             onerror="document.querySelector('.hero').classList.add('hero--solo'); this.closest('.hero-cutout').remove();" />
+        <!-- tenta .webp (93% menor), cai no .png, e some se não houver nenhum -->
+        <img src="assets/img/messias-recorte.webp" alt="Messias Costa, advogado"
+             data-fallback="assets/img/messias-recorte.png"
+             onerror="if(this.dataset.fallback){this.src=this.dataset.fallback;this.removeAttribute('data-fallback');}else{document.querySelector('.hero').classList.add('hero--solo');this.closest('.hero-cutout').remove();}" />
       </div>
     </div>
 
@@ -220,9 +222,10 @@
         <div class="frame" data-wipe>
           <!-- RETRATO — automático. Salve a foto real como
                src/assets/img/sobre.jpg e ela substitui o placeholder sozinha. -->
-          <img src="assets/img/sobre.jpg" alt="Messias Costa, advogado"
-               onload="this.nextElementSibling.remove()"
-               onerror="this.remove()" />
+          <img src="assets/img/sobre.webp" alt="Messias Costa, advogado"
+               data-fallback="assets/img/sobre.jpg"
+               onload="if(this.nextElementSibling)this.nextElementSibling.remove()"
+               onerror="if(this.dataset.fallback){this.src=this.dataset.fallback;this.removeAttribute('data-fallback');}else{this.remove();}" />
           <div class="placeholder">
             <span class="mono">MC</span>
             <small>Retrato a incluir</small>
