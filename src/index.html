@@ -27,22 +27,16 @@
 
   <!-- Sem Tailwind CDN: estava carregado com ZERO utilitário em uso.
        ?v= força o navegador a pegar a versão nova a cada atualização. -->
-  <link rel="stylesheet" href="assets/css/styles.css?v=5" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=6" />
 </head>
 <body>
 
   <!-- ==================== MODO PRÉVIA — REMOVER NO LANÇAMENTO ====================
-       Este aviso existe porque o retrato do hero ainda é PROVISÓRIO (não é foto
-       do Messias). Como o site está numa URL pública, sem este aviso qualquer
-       visitante acreditaria que aquele rosto é o dele — o que o art. 3º, II do
-       Provimento 205/2021 trata como informação que induz a erro.
-
        Ao publicar de verdade, remova este bloco inteiro (o <div> e o <style>),
        junto com a meta robots=noindex e o Disallow do robots.txt. -->
   <div class="previa-aviso">
     <strong>Prévia para aprovação.</strong>
-    A foto usada aqui é ilustrativa e <strong>não é o Dr. Messias</strong> — serve só para
-    mostrar o layout. Faltam ainda a foto real, o número da OAB e a biografia.
+    Faltam a fotografia, o número da OAB, a biografia e o horário de atendimento.
   </div>
   <style>
     .previa-aviso {
@@ -141,9 +135,10 @@
            Precisa ser foto real dele (art. 3º, II veda o que induz a erro).
            Sem o arquivo, o hero volta sozinho pra coluna única centralizada. -->
       <div class="hero-cutout" data-intro>
-        <!-- tenta .webp (93% menor), cai no .png, e some se não houver nenhum -->
-        <img src="assets/img/messias-recorte.webp" alt="Messias Costa, advogado"
-             data-fallback="assets/img/messias-recorte.png"
+        <!-- Enquanto não houver a foto real, mostra o marcador "sua foto aqui".
+             Assim que o recorte real existir, ele assume automaticamente. -->
+        <img src="assets/img/messias-recorte.webp" alt="Espaço reservado para a fotografia do advogado"
+             data-fallback="assets/img/placeholder-retrato.svg"
              onerror="if(this.dataset.fallback){this.src=this.dataset.fallback;this.removeAttribute('data-fallback');}else{document.querySelector('.hero').classList.add('hero--solo');this.closest('.hero-cutout').remove();}" />
       </div>
     </div>
@@ -467,7 +462,7 @@
   <script type="importmap">
     { "imports": { "motion": "https://cdn.jsdelivr.net/npm/motion@11/+esm" } }
   </script>
-  <script type="module" src="assets/js/main.js?v=5"></script>
+  <script type="module" src="assets/js/main.js?v=6"></script>
 
   <!-- rede de segurança: se o Motion não carregar (CDN fora/offline), mostra tudo estático -->
   <script>

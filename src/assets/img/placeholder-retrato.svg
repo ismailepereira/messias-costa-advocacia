@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600" width="480" height="600" role="img" aria-label="Espaço reservado para a fotografia do advogado">
+  <defs>
+    <linearGradient id="corpo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1d2b3c"/>
+      <stop offset="100%" stop-color="#101b28"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="70%" stop-color="#fff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="desvanece">
+      <rect width="480" height="600" fill="url(#fade)"/>
+    </mask>
+  </defs>
+
+  <g mask="url(#desvanece)">
+    <!-- ombros -->
+    <path d="M60 600c0-118 80-196 180-196s180 78 180 196z" fill="url(#corpo)" stroke="#a3812e" stroke-width="1.5" stroke-opacity="0.55"/>
+    <!-- cabeça -->
+    <circle cx="240" cy="250" r="112" fill="url(#corpo)" stroke="#a3812e" stroke-width="1.5" stroke-opacity="0.55"/>
+  </g>
+
+  <!-- rótulo -->
+  <text x="240" y="258" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif" font-size="27" fill="#c9a227" opacity="0.9">
+    Sua foto aqui
+  </text>
+  <text x="240" y="292" text-anchor="middle"
+        font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12"
+        letter-spacing="3.5" fill="#8a939e" opacity="0.85">
+    RETRATO PROFISSIONAL
+  </text>
+</svg>
