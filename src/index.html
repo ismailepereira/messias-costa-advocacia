@@ -6,7 +6,11 @@
   <!-- "Atuação em" e não "especialista em": o Provimento 205/2021, art. 3º, III
        veda anunciar especialidade sem certificação. Vale pro título e pra todo o texto. -->
   <title>Messias Costa — Advogado em Anapú (PA) | Previdenciário e Criminal</title>
-  <meta name="description" content="Messias Costa, advogado em Anapú (PA): aposentadorias e benefícios do INSS, salário-maternidade rural, defesa criminal, cível e família. Atendimento presencial e remoto para todo o Brasil." />
+  <!-- Só o que é verificável em fonte pública. "Atendimento remoto para todo o
+       Brasil" saiu daqui: a bio dele diz "Atuação Nacional", mas COMO ele atende
+       a distância é dedução nossa, e dedução publicada como fato induz a erro
+       (art. 3º, II). Volta quando ele confirmar. -->
+  <meta name="description" content="Messias Costa, advogado em Anapú (PA): aposentadorias e benefícios do INSS, salário-maternidade rural, defesa criminal, cível e família." />
 
   <!-- ========== MODO PRÉVIA — REMOVER NO LANÇAMENTO ==========
        Impede o Google de indexar enquanto o número da OAB e a biografia
@@ -15,8 +19,9 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Messias Costa | Advocacia" />
-  <meta property="og:description" content="Direito Previdenciário, Defesa Criminal, Cível e Família. Anapú (PA) e atendimento remoto para todo o Brasil." />
-  <meta property="og:image" content="assets/img/og-image.jpg" />
+  <meta property="og:description" content="Direito Previdenciário, Defesa Criminal, Cível e Família. Anapú, Pará." />
+  <!-- og:image só volta quando existir imagem real: o arquivo apontado aqui
+       nunca existiu e o link compartilhado saía quebrado. -->
   <meta property="og:locale" content="pt_BR" />
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a1420'/%3E%3Ctext x='32' y='43' font-size='27' text-anchor='middle' fill='%23c9a227' font-family='Georgia,serif'%3EMC%3C/text%3E%3C/svg%3E" />
@@ -35,8 +40,9 @@
        Ao publicar de verdade, remova este bloco inteiro (o <div> e o <style>),
        junto com a meta robots=noindex e o Disallow do robots.txt. -->
   <div class="previa-aviso">
-    <strong>Prévia para aprovação.</strong>
-    Faltam a fotografia, o número da OAB, a biografia e o horário de atendimento.
+    <strong>Prévia para aprovação. A foto é ilustrativa, não é o advogado.</strong>
+    Faltam o número da OAB, a fotografia real, a biografia, o horário, os municípios
+    atendidos e a confirmação do atendimento a distância.
   </div>
   <style>
     .previa-aviso {
@@ -54,6 +60,23 @@
       .previa-aviso { font-size: 0.7rem; padding: 0.5rem 0.8rem; }
     }
   </style>
+  <script>
+    /* A tarja é fixa, então o resto da página precisa reservar a altura dela.
+       Chutar essa altura não funciona: o texto quebra em 2, 3 ou 4 linhas
+       conforme a largura da tela e quantas pendências estiverem listadas —
+       reservar de menos faz o menu cobrir a tarja. Aqui ela é medida.
+       Sai junto com o bloco de prévia no lançamento. */
+    (function () {
+      var aviso = document.querySelector(".previa-aviso");
+      function medir() {
+        document.documentElement.style.setProperty("--aviso-h", aviso.offsetHeight + "px");
+      }
+      medir();
+      addEventListener("resize", medir);
+      addEventListener("load", medir);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(medir);
+    })();
+  </script>
   <!-- ================== FIM DO BLOCO DE PRÉVIA ================== -->
 
   <div class="progress" id="progress" aria-hidden="true"></div>
@@ -121,7 +144,7 @@
         <p class="hero-lead" data-intro>
           Aposentadorias e benefícios do <strong>INSS</strong>, <strong>salário-maternidade</strong>
           — inclusive para trabalhadoras rurais — e <strong>defesa criminal</strong>.
-          Atendimento presencial em Anapú e remoto para clientes de todo o Brasil.
+          Atendimento presencial em Anapú, no Pará.
         </p>
 
         <div class="hero-cta" data-intro>
@@ -140,7 +163,7 @@
              2. ilustrativa-retrato.webp — imagem ilustrativa, só na fase de prévia
              3. placeholder-retrato.svg — marcador "sua foto aqui"
              A legenda abaixo é removida automaticamente quando a foto real entra. -->
-        <img src="assets/img/messias-recorte.webp" alt="Imagem ilustrativa do layout"
+        <img src="assets/img/messias-recorte.webp" alt="Imagem ilustrativa — não é o advogado"
              data-etapa="1"
              onload="if(this.dataset.etapa==='1'){const l=this.parentElement.querySelector('.foto-legenda'); if(l) l.remove(); this.alt='Messias Costa, advogado';}"
              onerror="const e=this.dataset.etapa;
@@ -149,7 +172,7 @@
                       else { document.querySelector('.hero').classList.add('hero--solo'); this.closest('.hero-cutout').remove(); }" />
         <!-- Legenda presa à imagem: uma tarja no topo da página pode ser cortada
              num print, esta não. Some sozinha quando a foto real do cliente entra. -->
-        <p class="foto-legenda">Imagem meramente ilustrativa</p>
+        <p class="foto-legenda">Imagem meramente ilustrativa — não é o advogado</p>
       </div>
     </div>
 
@@ -203,7 +226,6 @@
            teclado, e mandar áudio é o que já fazem no dia a dia. -->
       <p class="nota reveal">
         Se preferir, pode mandar áudio pelo WhatsApp — não precisa escrever.
-        Atendimento presencial em Anapú e a distância para outros municípios e estados.
       </p>
     </div>
   </section>
@@ -232,10 +254,14 @@
             <p>O ponto que costuma decidir o pedido é a comprovação da atividade rural no período exigido. Documentos como notas de produtor, contratos e registros escolares ajudam nessa prova.</p>
           </div>
         </details>
+        <!-- Antes esta resposta afirmava atendimento a distância por WhatsApp e
+             videochamada. Isso não foi confirmado por ele — era dedução a partir
+             de "Atuação Nacional" na bio. Reescrita para não afirmar o que não
+             se sabe (art. 3º, II); volta completa quando ele confirmar. -->
         <details>
           <summary>Preciso ir até Anapú para ser atendido?</summary>
           <div class="resposta">
-            <p>Não necessariamente. O atendimento presencial acontece em Anapú, mas casos previdenciários e consultoria podem ser conduzidos a distância, por WhatsApp e videochamada, para clientes de outros municípios e estados.</p>
+            <p>O atendimento presencial acontece em Anapú, no Pará. Se você mora em outro município, mande uma mensagem no WhatsApp contando a sua situação — a resposta sobre como o caso pode ser conduzido depende do tipo de pedido.</p>
           </div>
         </details>
         <details>
@@ -271,9 +297,11 @@
           <span class="val">Anapú</span>
           <span class="lbl">Pará — atendimento presencial</span>
         </div>
+        <!-- "Atendimento remoto" virou "Atuação nacional": o primeiro é serviço
+             que ninguém confirmou, o segundo é o que a bio pública dele declara. -->
         <div class="stat reveal">
           <span class="val">Brasil</span>
-          <span class="lbl">Atendimento remoto</span>
+          <span class="lbl">Atuação nacional</span>
         </div>
       </div>
     </div>
@@ -321,8 +349,12 @@
       <div class="fill"></div>
     </div>
     <div class="wrap">
-      <blockquote data-split>Orientação clara sobre o seu caso, do primeiro contato à decisão final.</blockquote>
-      <p class="attrib reveal">Messias Costa · Advogado</p>
+      <!-- Sem assinatura: ele nunca disse esta frase. Atribuir a um advogado real
+           uma citação escrita por nós é informação que induz a erro (art. 3º, II),
+           e é dele a responsabilidade. Vira citação de verdade quando ele mandar
+           uma frase dele. "Até a decisão final" também saiu — soava a garantia de
+           levar todo caso ao fim (art. 6º). -->
+      <blockquote data-split>Orientação clara sobre o seu caso, com retorno a cada etapa do processo.</blockquote>
     </div>
   </section>
 
@@ -380,7 +412,6 @@
         <p class="reveal">[Biografia pendente — formação, tempo de atuação e trajetória profissional. Preencher com o cliente antes de publicar.]</p>
         <ul class="sobre-list" data-stagger>
           <li class="reveal">Escritório em Anapú, no Pará</li>
-          <li class="reveal">Atendimento remoto para clientes de outros estados</li>
           <li class="reveal">Atuação também como palestrante</li>
         </ul>
       </div>
@@ -397,17 +428,15 @@
         <p class="big reveal">Anapú — Pará</p>
         <p class="reveal">Goiás, N° 10, São Luís, Anapú — PA</p>
         <!-- PENDENTE: confirmar com o cliente QUAIS municípios ele de fato atende.
-             A lista abaixo é de vizinhos de Anapú e ajuda muito na busca local
-             ("advogado previdenciário em Pacajá"), mas não pode ser chute. -->
-        <p class="reveal">
-          Também atende moradores de <strong>[confirmar municípios]</strong> —
-          Pacajá, Senador José Porfírio, Vitória do Xingu, Altamira e região da Transamazônica.
-        </p>
+             A lista de vizinhos de Anapú (Pacajá, Senador José Porfírio, Vitória do
+             Xingu, Altamira, região da Transamazônica) saiu do ar: ajuda muito na
+             busca local, mas publicada sem confirmação é afirmação sobre a atuação
+             dele que ninguém checou. Entra assim que ele disser quais são. -->
+        <p class="reveal">Municípios atendidos além de Anapú: [confirmar]</p>
         <!-- PENDENTE: confirmar horário -->
         <p class="reveal">Horário: [confirmar]</p>
-        <p class="reveal" style="margin-bottom:1.8rem;">
-          Atendimento remoto disponível para clientes de todo o Brasil, especialmente em casos previdenciários e consultoria.
-        </p>
+        <!-- PENDENTE: ele atende a distância? como? -->
+        <p class="reveal" style="margin-bottom:1.8rem;">Atendimento a distância: [confirmar]</p>
         <a class="btn btn-outline reveal" target="_blank" rel="noopener"
            href="https://www.google.com/maps/search/?api=1&query=Goi%C3%A1s%2C%20N%C2%BA%2010%2C%20S%C3%A3o%20Lu%C3%ADs%2C%20Anap%C3%BA%2C%20PA">
           <span>Abrir no Google Maps</span>
@@ -441,7 +470,7 @@
       <div>
         <p class="foot-h">Atendimento</p>
         <p>Anapú — PA (presencial)</p>
-        <p>Remoto — todo o Brasil</p>
+        <p>Atendimento a distância: [confirmar]</p>
         <p>Horário: [confirmar]</p>
       </div>
     </div>

@@ -18,7 +18,10 @@
 
 Site institucional de vitrine (página única) que reforce a autoridade que ele já construiu no Instagram — apresentar áreas de atuação, gerar contato via WhatsApp (canal primário dele hoje), e servir de "cartão de visita" formal/profissional pra quem chega por indicação ou pesquisa no Google (público que não segue Instagram).
 
-## Escopo confirmado com o cliente
+## Escopo desta prévia — **ainda não falado com o cliente**
+
+> Levantamento feito só de fonte pública (Instagram, Facebook). Nada aqui foi
+> confirmado por ele. O que estiver marcado como pendente bloqueia a publicação.
 
 - **Seções:** Hero · Áreas de atuação · Sobre/Autoridade · Atendimento (Anapú-PA + nacional/online) · Contato (rodapé). Sem blog nesta fase (conteúdo já é feito no Instagram).
 - **Foto do advogado:** placeholder — cliente envia foto profissional depois.
@@ -62,8 +65,11 @@ Segue o padrão do `_template` (ver `sites-clientes/docs/stack.md`): HTML/CSS/JS
 | Anos de atuação | faixa de números | `[ ]` — só preencher com o número real |
 | Biografia | seção Sobre | parágrafo placeholder marcado |
 | Horário de atendimento | rodapé | `[confirmar]` |
-| Foto do escritório/retrato | hero e Sobre | usando fundo abstrato + monograma "MC"; slots prontos no HTML |
+| **Retrato** | hero | imagem **ilustrativa** com legenda colada na foto; `src/assets/img/RETRATO-PROVISORIO.txt` trava o `verificar.py --lancamento` |
+| **Municípios atendidos** | Atendimento | `[confirmar]` — a lista de vizinhos de Anapú saiu do ar por não ter confirmação |
+| **Atendimento a distância** | Atendimento e rodapé | `[confirmar]` — a bio diz "Atuação Nacional", mas ele atende como? videochamada? |
 | Domínio | `robots.txt`, `sitemap.xml` | trocar `SEU-DOMINIO-AQUI` |
+| Frase da citação | seção Citação | sem assinatura até ele mandar uma frase dele |
 
 ## Fora de escopo (nesta fase)
 

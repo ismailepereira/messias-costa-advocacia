@@ -1,0 +1,29 @@
+RETRATO PROVISÓRIO EM USO — NÃO PUBLICAR
+========================================
+
+O arquivo `ilustrativa-retrato.webp` NÃO é a fotografia de Messias Costa.
+É uma imagem ilustrativa, usada apenas para o cliente enxergar o layout
+durante a aprovação da prévia.
+
+Por que isso importa
+--------------------
+Publicar retrato que não é o do profissional é informação que induz a erro
+e é vedado pelo art. 3º, II do Provimento 205/2021 do CFOAB. Quem responde
+pelo processo disciplinar é o advogado, não quem fez o site.
+
+Enquanto ela estiver em uso, a página mostra a legenda "Imagem meramente
+ilustrativa — não é o advogado" colada na própria foto (não só numa tarja
+no topo, que some num print de tela).
+
+Este arquivo é uma trava: `ferramentas/verificar.py . --lancamento` acusa
+ERRO enquanto ele existir. Ele faltava aqui — o site tinha a imagem
+ilustrativa no ar sem nada impedindo a publicação.
+
+Para lançar
+-----------
+1. Salvar a foto real como `messias-recorte.webp` (fundo transparente):
+   python ferramentas/recortar-retrato.py foto-dele.jpg src/assets/img/messias-recorte.webp
+2. Apagar `ilustrativa-retrato.webp` e este arquivo.
+3. Rodar `python ferramentas/verificar.py . --lancamento`.
+
+A legenda e o alt da imagem se ajustam sozinhos quando a foto real entra.
